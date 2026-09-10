@@ -10,8 +10,16 @@
   },
   "homepage": "https://github.com/aravmdn/folio#readme",
   "bugs": "https://github.com/aravmdn/folio/issues",
-  "keywords": ["markdown", "reader", "electron", "desktop", "offline"],
-  "engines": { "node": ">=24" },
+  "keywords": [
+    "markdown",
+    "reader",
+    "electron",
+    "desktop",
+    "offline"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
   "private": true,
   "type": "module",
   "main": "electron/main.cjs",
@@ -20,7 +28,11 @@
     "start": "npm run build && electron .",
     "dev": "vite --host 127.0.0.1",
     "install-local": "npm run build && node scripts/install-local.mjs",
-    "uninstall-local": "node scripts/uninstall-local.mjs"
+    "uninstall-local": "node scripts/uninstall-local.mjs",
+    "pretest": "npm run build",
+    "test": "node scripts/smoke.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "dompurify": "^3.4.15",
@@ -31,6 +43,7 @@
   "devDependencies": {
     "electron": "^44.3.0",
     "playwright": "^1.63.0",
+    "prettier": "^3.9.6",
     "vite": "^8.2.2"
   }
 }

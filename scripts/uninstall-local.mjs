@@ -8,12 +8,19 @@ if (process.platform !== 'linux') {
 }
 
 const applications = path.join(os.homedir(), '.local/share/applications');
-const entries = [path.join(os.homedir(), '.local/bin/folio'), path.join(applications, 'folio.desktop')];
+const entries = [
+  path.join(os.homedir(), '.local/bin/folio'),
+  path.join(applications, 'folio.desktop'),
+];
 const removable = [];
 for (const filename of entries) {
   let content;
-  try { content = await readFile(filename, 'utf8'); }
-  catch (error) { if (error.code === 'ENOENT') continue; throw error; }
+  try {
+    content = await readFile(filename, 'utf8');
+  } catch (error) {
+    if (error.code === 'ENOENT') continue;
+    throw error;
+  }
   if (!content.includes('Folio local Markdown reader')) {
     throw new Error(`Refusing to remove an unrelated file: ${filename}`);
   }
@@ -21,4 +28,6 @@ for (const filename of entries) {
 }
 for (const filename of removable) await unlink(filename);
 spawnSync('update-desktop-database', [applications], { stdio: 'ignore' });
-console.log('Removed Folio desktop integration. Your documents, settings, and source checkout remain in place.');
+console.log(
+  'Removed Folio desktop integration. Your documents, settings, and source checkout remain in place.',
+);
