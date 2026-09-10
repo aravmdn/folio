@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a reproducible problem with Folio.
+title: '[Bug]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search existing issues first. Use synthetic files with no private information.
+        For vulnerabilities, follow SECURITY.md instead of opening a public issue.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include a small Markdown example if relevant; remove personal content and paths.
+      placeholder: |
+        1. Open a file containing...
+        2. Select...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include the Folio commit (git rev-parse --short HEAD), OS/distribution, desktop session, Node version, and launch method.
+      placeholder: |
+        Commit:
+        OS / desktop:
+        Node version (node --version):
+        Launch method (npm start / launcher / browser preview):
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Screenshots or logs
+      description: Optional. Review attachments for private file names, paths, and content before sharing.

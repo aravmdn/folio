@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a focused improvement to Markdown reading.
+title: '[Feature]: '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe a concrete reading workflow and its current limitation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe how the feature would work for someone using Folio.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and scope
+      description: Mention workarounds or a smaller version of the proposal. Feature requests are not release commitments.
