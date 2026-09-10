@@ -18,7 +18,9 @@
   "scripts": {
     "build": "vite build",
     "start": "npm run build && electron .",
-    "dev": "vite --host 127.0.0.1"
+    "dev": "vite --host 127.0.0.1",
+    "install-local": "npm run build && node scripts/install-local.mjs",
+    "uninstall-local": "node scripts/uninstall-local.mjs"
   },
   "dependencies": {
     "dompurify": "^3.4.15",
