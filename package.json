@@ -41,9 +41,9 @@
     "marked": "^18.0.12"
   },
   "devDependencies": {
-    "electron": "^44.3.0",
+    "electron": "^44.4.3",
     "playwright": "^1.63.0",
-    "prettier": "^3.9.6",
-    "vite": "^8.2.2"
+    "prettier": "^3.9.8",
+    "vite": "^8.3.0"
   }
 }
